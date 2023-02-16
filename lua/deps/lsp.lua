@@ -82,12 +82,12 @@ return {
         capabilities = caps,
         on_attach = on_attach,
         settings = {
-          ["rust-analyzer.cargo.runBuildScripts"] = false,
+          ["rust-analyzer.cargo.runBuildScripts"] = true,
         },
       }
 
       -- lua
-      lsp.sumneko_lua.setup {
+      lsp.lua_ls.setup {
         capabilities = caps,
         on_attach = combine(on_attach, function(client)
           -- use stylua formatting instead
