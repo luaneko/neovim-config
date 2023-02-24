@@ -24,7 +24,7 @@ map("n", "<leader>;", vim.lsp.buf.code_action)
 map("n", "<leader>:", vim.lsp.buf.format)
 map("n", "<leader>r", vim.lsp.buf.rename)
 map("n", "<leader>w", ":lua vim.lsp.buf.format()<cr>:w<cr>")
-map("n", "<leader>u", ":UndotreeToggle<cr>")
+map("n", "<leader>u", require("telescope").extensions.undo.undo)
 
 map("n", "<leader>c", telescope.commands)
 map("n", "<leader>e", telescope.diagnostics)

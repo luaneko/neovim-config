@@ -24,16 +24,6 @@ return {
     end,
   },
 
-  -- show buffer history
-  {
-    "mbbill/undotree",
-    setup = function()
-      vim.g.undotree_WindowLayout = 4
-      vim.g.undotree_SplitWidth = 50
-      vim.g.undotree_SetFocusWhenToggle = 1
-    end,
-  },
-
   -- window size/position manager
   "simeji/winresizer",
 }

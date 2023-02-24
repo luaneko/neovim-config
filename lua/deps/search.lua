@@ -19,6 +19,7 @@ return {
         defaults = require("telescope.themes").get_ivy {
           layout_config = {
             height = 35,
+            preview_width = 0.6,
           },
           file_ignore_patterns = (function()
             local ignore_dirs = {}
@@ -69,6 +70,28 @@ return {
       }
 
       require("telescope").load_extension("file_browser")
+    end,
+  },
+
+  -- telescope-based undo history search
+  {
+    "debugloop/telescope-undo.nvim",
+    requires = "nvim-telescope/telescope.nvim",
+    function()
+      require("telescope").setup {
+        extensions = {
+          undo = {
+            use_delta = true,
+            mappings = {
+              -- https://github.com/debugloop/telescope-undo.nvim/issues/16
+              i = { ["<cr>"] = require("telescope-undo.actions").restore },
+              n = { ["<cr>"] = require("telescope-undo.actions").restore },
+            },
+          },
+        },
+      }
+
+      require("telescope").load_extension("undo")
     end,
   },
 
