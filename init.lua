@@ -18,7 +18,6 @@ require("dep") {
     "diagnostics",
     "keymap",
     "lsp",
-    "performance",
     "search",
     "session",
     "statusline",
