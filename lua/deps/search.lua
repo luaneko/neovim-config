@@ -65,6 +65,7 @@ return {
             auto_depth = true,
             select_buffer = true,
             hidden = true,
+            respect_gitignore = false,
           },
         },
       }
