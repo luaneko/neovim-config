@@ -30,4 +30,10 @@ return {
       },
     },
   },
+
+  -- restore last scroll position
+  "farmergreg/vim-lastplace",
+
+  -- sensible buffer options
+  "tpope/vim-sleuth",
 }

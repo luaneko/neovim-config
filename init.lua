@@ -11,17 +11,14 @@ require("options")
 require("dep") {
   modules = {
     prefix = "deps.",
-    "buffer",
     "completion",
     "editing",
-    "keymap",
     "lsp",
     "search",
     "session",
     "statusline",
     "theme",
     "tree-sitter",
-    "vcs",
     "visual",
   },
 }

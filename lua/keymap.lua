@@ -35,9 +35,8 @@ map("n", "gd", telescope.lsp_definitions)
 map("n", "gr", telescope.lsp_references)
 map("n", "gi", telescope.lsp_implementations)
 
-map("n", "<leader>f", telescope.find_files)
-map("n", "<leader>-", ":!open %:p:h<cr><cr>")
-map("n", "-", require("telescope").extensions.file_browser.file_browser)
+map("n", "<leader>f", require("telescope").extensions.file_browser.file_browser)
+map("n", "<leader>F", ":!open %:p:h<cr><cr>")
 map("n", "?", telescope.live_grep)
 
 map("n", "<tab>", telescope.buffers)

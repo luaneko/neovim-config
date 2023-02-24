@@ -7,6 +7,9 @@
 --   https://chiya.dev/licenses/mit.txt
 --
 return {
+  -- more precise word motion overrides
+  "chaoren/vim-wordmotion",
+
   -- code commenter
   {
     "echasnovski/mini.nvim",
@@ -41,6 +44,27 @@ return {
     setup = function()
       vim.g.sandwich_no_default_key_mappings = true
       vim.g.operator_sandwich_no_default_key_mappings = true
+    end,
+  },
+
+  -- matching keyword jumping
+  {
+    "andymass/vim-matchup",
+    requires = "nvim-treesitter/nvim-treesitter",
+    function()
+      require("nvim-treesitter.configs").setup {
+        matchup = {
+          enable = true,
+        },
+      }
+    end,
+  },
+
+  -- useful bracket navigation keys
+  {
+    "echasnovski/mini.nvim",
+    function()
+      require("mini.bracketed").setup {}
     end,
   },
 }

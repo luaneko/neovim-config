@@ -7,6 +7,9 @@
 --   https://chiya.dev/licenses/mit.txt
 --
 return {
+  -- window size/position manager
+  "simeji/winresizer",
+
   -- show line indents
   "lukas-reineke/indent-blankline.nvim",
 
@@ -48,6 +51,15 @@ return {
           blend = 0,
         },
       }
+    end,
+  },
+
+  -- show git unstaged code
+  {
+    "lewis6991/gitsigns.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    function()
+      require("gitsigns").setup()
     end,
   },
 }
