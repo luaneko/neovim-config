@@ -11,28 +11,33 @@ return {
   {
     "hrsh7th/nvim-cmp",
     requires = {
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+      "ray-x/cmp-treesitter",
+      "lukas-reineke/cmp-rg",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
     },
     function()
       local cmp = require("cmp")
 
       cmp.setup {
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "nvim_lsp_signature_help" },
+          { name = "treesitter" },
+          { name = "rg" },
+        }, {
+          { name = "buffer" },
+        }),
+
         snippet = {
           expand = function(args)
             require("luasnip").lsp_expand(args.body)
           end,
-        },
-
-        sources = cmp.config.sources {
-          { name = "nvim_lsp" },
-        },
-        {
-          { name = "buffer" },
         },
 
         mapping = {
@@ -51,19 +56,20 @@ return {
         },
       }
 
-      cmp.setup.cmdline("/", {
+      cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
         sources = {
           { name = "buffer" },
         },
       })
 
       cmp.setup.cmdline(":", {
-        sources = cmp.config.sources {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
           { name = "path" },
-        },
-        {
+        }, {
           { name = "cmdline" },
-        },
+        }),
       })
     end,
   },
