@@ -8,15 +8,17 @@
 --
 return {
   {
-    "arcticicestudio/nord-vim",
-    setup = function()
-      vim.g.nord_bold = 1
-      vim.g.nord_italic = 1
-      vim.g.nord_italic_comments = 1
-      vim.g.nord_underline = 1
-    end,
+    "Shatur/neovim-ayu",
     function()
-      vim.cmd("colorscheme nord")
+      local ayu = require("ayu")
+
+      ayu.setup {
+        overrides = {
+          Normal = { bg = "None" },
+        },
+      }
+
+      ayu.colorscheme()
     end,
   },
 

@@ -24,9 +24,6 @@ return {
     end,
   },
 
-  -- turn buffer into hex view
-  "fidian/hexmode",
-
   -- show buffer history
   {
     "mbbill/undotree",
