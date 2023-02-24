@@ -13,7 +13,6 @@ return {
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "kyazdani42/nvim-web-devicons",
     },
     function()
       require("telescope").setup {
