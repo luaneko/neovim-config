@@ -50,14 +50,13 @@ return {
     end,
   },
 
-  -- ultra quick buffer navigation
+  -- quick buffer navigation
   {
-    "ggandor/lightspeed.nvim",
+    "ggandor/leap.nvim",
     requires = "tpope/vim-repeat",
     function()
-      require("lightspeed").setup {
-        limit_ft_matches = 50,
-      }
+      require("leap").add_default_mappings()
+      vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
     end,
   },
 
