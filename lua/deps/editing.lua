@@ -20,9 +20,9 @@ return {
 
   -- close brackets automatically
   {
-    "echasnovski/mini.nvim",
+    "windwp/nvim-autopairs",
     function()
-      require("mini.pairs").setup {}
+      require("nvim-autopairs").setup()
     end,
   },
 
@@ -38,19 +38,9 @@ return {
   -- text quoter
   {
     "machakann/vim-sandwich",
-    requires = "svermeulen/vimpeccable",
     setup = function()
       vim.g.sandwich_no_default_key_mappings = true
       vim.g.operator_sandwich_no_default_key_mappings = true
-    end,
-    function()
-      local map = require("vimp")
-
-      -- https://github.com/machakann/vim-sandwich/blob/master/plugin/operator/sandwich.vim#L82
-      -- avoid key conflict with lightspeed by only mapping visual mode
-      map.xmap("sa", "<plug>(operator-sandwich-add)")
-      map.xmap("sd", "<plug>(operator-sandwich-delete)")
-      map.xmap("sr", "<plug>(operator-sandwich-replace)")
     end,
   },
 }

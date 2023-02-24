@@ -15,7 +15,6 @@ require("dep") {
     "completion",
     "editing",
     "explorer",
-    "diagnostics",
     "keymap",
     "lsp",
     "search",
@@ -27,3 +26,4 @@ require("dep") {
     "visual",
   },
 }
+require("keymap")
