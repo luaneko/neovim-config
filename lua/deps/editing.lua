@@ -9,12 +9,9 @@
 return {
   -- code commenter
   {
-    "numToStr/Comment.nvim",
-    requires = { "JoosepAlviste/nvim-ts-context-commentstring" },
+    "echasnovski/mini.nvim",
     function()
-      require("Comment").setup {
-        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-      }
+      require("mini.comment").setup {}
     end,
   },
 
@@ -23,9 +20,9 @@ return {
 
   -- close brackets automatically
   {
-    "windwp/nvim-autopairs",
+    "echasnovski/mini.nvim",
     function()
-      require("nvim-autopairs").setup()
+      require("mini.pairs").setup {}
     end,
   },
 
@@ -34,7 +31,7 @@ return {
     "windwp/nvim-ts-autotag",
     requires = "nvim-treesitter/nvim-treesitter",
     function()
-      require("nvim-ts-autotag").setup()
+      require("nvim-ts-autotag").setup {}
     end,
   },
 

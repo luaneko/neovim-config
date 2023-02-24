@@ -23,10 +23,12 @@ return {
     end,
   },
 
-  -- useful paired key mappings
+  -- useful bracket navigation keys
   {
-    "tpope/vim-unimpaired",
-    requires = "tpope/vim-repeat",
+    "echasnovski/mini.nvim",
+    function()
+      require("mini.bracketed").setup {}
+    end,
   },
 
   -- custom keymap

@@ -20,6 +20,7 @@ return {
         term_colors = true,
         integrations = {
           cmp = true,
+          mini = true,
           leap = true,
           gitsigns = true,
           fidget = true,

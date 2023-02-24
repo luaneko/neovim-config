@@ -87,22 +87,5 @@ return {
         },
       }
     end,
-    deps = {
-      -- custom text objects (todo)
-      "nvim-treesitter/nvim-treesitter-textobjects",
-
-      -- commenting engine using tree-sitter
-      {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-        function()
-          require("nvim-treesitter.configs").setup {
-            context_commentstring = {
-              enable = true,
-              enable_autocmd = false,
-            },
-          }
-        end,
-      },
-    },
   },
 }

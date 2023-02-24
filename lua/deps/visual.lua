@@ -31,11 +31,23 @@ return {
     "folke/todo-comments.nvim",
     requires = {
       "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim",
       "nvim-telescope/telescope.nvim",
     },
     function()
       require("todo-comments").setup()
+    end,
+  },
+
+  -- show lsp status
+  {
+    "j-hui/fidget.nvim",
+    function()
+      require("fidget").setup {
+        window = {
+          relative = "editor",
+          blend = 0,
+        },
+      }
     end,
   },
 }
