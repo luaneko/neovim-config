@@ -14,7 +14,6 @@ require("dep") {
     "buffer",
     "completion",
     "editing",
-    "explorer",
     "keymap",
     "lsp",
     "search",

@@ -17,6 +17,9 @@ return {
     function()
       require("telescope").setup {
         defaults = require("telescope.themes").get_ivy {
+          layout_config = {
+            height = 35,
+          },
           file_ignore_patterns = (function()
             local ignore_dirs = {}
 
@@ -46,6 +49,26 @@ return {
           },
         },
       }
+    end,
+  },
+
+  -- telescope-based file explorer
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = "nvim-telescope/telescope.nvim",
+    function()
+      require("telescope").setup {
+        extensions = {
+          file_browser = {
+            hijack_netrw = true,
+            auto_depth = true,
+            select_buffer = true,
+            hidden = true,
+          },
+        },
+      }
+
+      require("telescope").load_extension("file_browser")
     end,
   },
 
