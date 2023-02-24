@@ -51,8 +51,8 @@ return {
       map.nmap({ "silent" }, "<leader>`", ":edit ~/.config/nvim/init.lua<cr>")
 
       -- lsp
-      map.nmap({ "silent" }, "gd", ":Telescope lsp_definitions jump_type=vsplit<cr>")
-      map.nmap({ "silent" }, "gi", ":Telescope lsp_implementations jump_type=vsplit<cr>")
+      map.nmap({ "silent" }, "gd", ":Telescope lsp_definitions<cr>")
+      map.nmap({ "silent" }, "gi", ":Telescope lsp_implementations<cr>")
       map.nmap({ "silent" }, "gr", ":Telescope lsp_references<cr>")
       map.nnoremap({ "silent" }, "[g", vim.diagnostic.goto_prev)
       map.nnoremap({ "silent" }, "]g", vim.diagnostic.goto_next)
