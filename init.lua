@@ -21,7 +21,6 @@ require("dep") {
     "search",
     "session",
     "statusline",
-    "testing",
     "theme",
     "tree-sitter",
     "vcs",

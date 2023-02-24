@@ -91,21 +91,6 @@ return {
       -- custom text objects (todo)
       "nvim-treesitter/nvim-treesitter-textobjects",
 
-      -- tree-sitter debugging tool
-      {
-        "nvim-treesitter/playground",
-        function()
-          require("nvim-treesitter.configs").setup {
-            playground = {
-              enable = true,
-            },
-            query_linter = {
-              enable = true,
-            },
-          }
-        end,
-      },
-
       -- commenting engine using tree-sitter
       {
         "JoosepAlviste/nvim-ts-context-commentstring",

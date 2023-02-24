@@ -7,9 +7,6 @@
 --   https://chiya.dev/licenses/mit.txt
 --
 return {
-  -- git integration
-  "tpope/vim-fugitive",
-
   -- show git unstaged code
   {
     "lewis6991/gitsigns.nvim",

@@ -29,14 +29,6 @@ return {
     requires = "tpope/vim-repeat",
   },
 
-  -- remember forgotten shortcuts
-  {
-    "folke/which-key.nvim",
-    function()
-      require("which-key").setup {}
-    end,
-  },
-
   -- custom keymap
   {
     "svermeulen/vimpeccable",
@@ -58,10 +50,9 @@ return {
       map.nnoremap({ "silent" }, "]g", vim.diagnostic.goto_next)
       map.nnoremap({ "silent" }, "K", vim.lsp.buf.hover)
 
-      map.nmap({ "silent" }, "<leader>e", ":TroubleToggle workspace_diagnostics<cr>")
-      map.nmap({ "silent" }, "<leader>E", ":Telescope diagnostics<cr>")
+      map.nmap({ "silent" }, "<leader>e", ":Telescope diagnostics<cr>")
       map.nmap({ "silent" }, "<leader>d", ":Telescope lsp_document_symbols<cr>")
-      map.nmap({ "silent" }, "<leader>D", ":Telescope lsp_workspace_symbols<cr>")
+      map.nmap({ "silent" }, "<leader>D", ":Telescope lsp_dynamic_workspace_symbols<cr>")
       map.nnoremap({ "silent" }, "<leader>;", vim.lsp.buf.code_action)
       map.vnoremap({ "silent" }, "<leader>;", vim.lsp.buf.range_code_action)
       map.nnoremap({ "silent" }, "<leader>:", vim.lsp.buf.format)

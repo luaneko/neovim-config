@@ -8,33 +8,23 @@
 --
 return {
   -- show line indents
-  "Yggdroot/indentLine",
+  "lukas-reineke/indent-blankline.nvim",
 
-  -- show vim markers on the side
-  "kshenoy/vim-signature",
-
-  -- highlight yanked text
-  "machakann/vim-highlightedyank",
+  -- show markers on the side
+  {
+    "chentoast/marks.nvim",
+    function()
+      require("marks").setup {
+        default_mappings = true,
+      }
+    end,
+  },
 
   -- highlight search matches
   "romainl/vim-cool",
 
   -- highlight substitute matches
   "markonm/traces.vim",
-
-  -- highlight brackets in rainbow
-  {
-    "p00f/nvim-ts-rainbow",
-    requires = "nvim-treesitter/nvim-treesitter",
-    function()
-      require("nvim-treesitter.configs").setup {
-        rainbow = {
-          enable = true,
-          extended_mode = true,
-        },
-      }
-    end,
-  },
 
   -- highlight todo comments
   {
@@ -46,25 +36,6 @@ return {
     },
     function()
       require("todo-comments").setup()
-    end,
-  },
-
-  -- highlight hex colors
-  {
-    "norcalli/nvim-colorizer.lua",
-    function()
-      require("colorizer").setup()
-    end,
-  },
-
-  -- hide away distracting code
-  {
-    "folke/zen-mode.nvim",
-    requires = {
-      { "folke/twilight.nvim", requires = "nvim-treesitter/nvim-treesitter" },
-    },
-    function()
-      require("zen-mode").setup()
     end,
   },
 }
