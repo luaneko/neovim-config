@@ -63,6 +63,7 @@ vim.cmd([[
   augroup end
 ]])
 
+-- highlight yanked text
 vim.cmd([[
   augroup highlight_yank
     autocmd!

@@ -8,17 +8,34 @@
 --
 return {
   {
-    "Shatur/neovim-ayu",
+    "catppuccin/nvim",
     function()
-      local ayu = require("ayu")
-
-      ayu.setup {
-        overrides = {
-          Normal = { bg = "None" },
+      require("catppuccin").setup {
+        flavour = "mocha",
+        background = {
+          light = "latte",
+          dark = "mocha",
+        },
+        transparent_background = true,
+        term_colors = true,
+        integrations = {
+          cmp = true,
+          leap = true,
+          gitsigns = true,
+          fidget = true,
+          telescope = true,
+          markdown = true,
+          sandwich = true,
+          indent_blankline = {
+            enabled = true,
+          },
+          native_lsp = {
+            enabled = true,
+          },
         },
       }
 
-      ayu.colorscheme()
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
 

@@ -14,7 +14,7 @@ return {
     function()
       require("lualine").setup {
         options = {
-          theme = "ayu",
+          theme = "catppuccin",
           icons_enabled = true,
           section_separators = "",
           component_separators = "",
@@ -27,15 +27,8 @@ return {
         sections = {
           lualine_a = { "mode" },
           lualine_b = { "branch", "diff", "diagnostics" },
-          lualine_c = {
-            { "filename", path = 1 },
-            "filesize",
-          },
-          lualine_x = {
-            require("auto-session-library").current_session_name,
-            "encoding",
-            { "filetype", colored = true },
-          },
+          lualine_c = { { "filename", path = 1 }, "filesize" },
+          lualine_x = { "encoding", { "filetype", colored = true } },
           lualine_y = { "location", "progress" },
           lualine_z = { "hostname" },
         },
