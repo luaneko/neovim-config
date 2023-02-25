@@ -21,22 +21,6 @@ return {
             height = 35,
             preview_width = 0.6,
           },
-          file_ignore_patterns = (function()
-            local ignore_dirs = {}
-
-            for _, name in ipairs {
-              "node_modules",
-              "target",
-              "in",
-              "out",
-              "build",
-            } do
-              table.insert(ignore_dirs, string.format("^%s/", name))
-              table.insert(ignore_dirs, string.format("/%s/", name))
-            end
-
-            return ignore_dirs
-          end)(),
         },
 
         pickers = {
