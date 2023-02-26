@@ -46,10 +46,14 @@ return {
         extensions = {
           file_browser = {
             hijack_netrw = true,
+            grouped = true,
             auto_depth = true,
             select_buffer = true,
             hidden = true,
             respect_gitignore = false,
+            dir_icon = " ",
+            use_fd = true,
+            git_status = true,
           },
         },
       }
